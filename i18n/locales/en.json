@@ -9,5 +9,18 @@
   },
   "submit": "Submit",
   "submitting": "Submitting",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "home": {
+    "self": "Home"
+  },
+  "validators": {
+    "required": "Required",
+    "minLength": "Minimum length of {min} characters",
+    "maxLength": "Maximum length of {min} characters",
+    "email": "Invalid email"
+  },
+  "product": {
+    "signup": "Sign-up",
+    "subscribe": "I would like to receive occasional product updates and announcements"
+  }
 }

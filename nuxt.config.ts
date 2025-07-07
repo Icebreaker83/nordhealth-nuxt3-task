@@ -3,8 +3,17 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   ssr: false,
-  modules: ['@nuxt/eslint', '@pinia/nuxt', '@nuxtjs/i18n'],
-  css: ['@nordhealth/css/lib/nord.min.css', '@nordhealth/themes/lib/vet.css'],
+  modules: [
+    '@nuxt/eslint',
+    '@pinia/nuxt',
+    '@nuxtjs/i18n',
+    '@vee-validate/nuxt',
+  ],
+  css: [
+    '@nordhealth/css/lib/nord.min.css',
+    '@nordhealth/themes/lib/vet.css',
+    '~/assets/scss/main.scss',
+  ],
   // Source directory
   srcDir: 'client/',
   components: {

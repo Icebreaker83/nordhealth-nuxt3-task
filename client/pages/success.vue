@@ -1,9 +1,10 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 definePageMeta({
-  redirect: '/products',
+  title: 'SUCCESS',
 });
 </script>
-
 <template>
-  <ProductsList />
+  <div>Success</div>
 </template>

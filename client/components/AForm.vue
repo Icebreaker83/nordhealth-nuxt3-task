@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import '@nordhealth/components/lib/Stack';
 import '@nordhealth/components/lib/Button';
+import '@nordhealth/components/lib/Divider';
 
 interface AFormProps {
   focusFirstInput?: boolean;
+  loading?: boolean;
 }
 const props = withDefaults(defineProps<AFormProps>(), {
   focusFirstInput: true,
@@ -15,7 +17,6 @@ const emit = defineEmits<{
 }>();
 
 const formRef = ref<HTMLElement>();
-const submitting = ref(false);
 
 // Focus the first focusable element
 const focusFirstElement = () => {
@@ -34,6 +35,7 @@ onMounted(() => {
 });
 
 const onSubmit = () => {
+  if (props.loading) return;
   emit('submit');
 };
 
@@ -45,11 +47,12 @@ const onCancel = () => {
   <form ref="formRef" @submit.prevent="onSubmit">
     <nord-stack gap="l">
       <slot></slot>
+      <nord-divider />
       <slot name="controls">
         <nord-stack direction="horizontal" gap="1">
           <nord-button
             type="button"
-            :disabled="submitting"
+            :disabled="props.loading"
             tabindex="-1"
             @click="onCancel"
           >
@@ -58,10 +61,10 @@ const onCancel = () => {
           <nord-button
             type="submit"
             variant="primary"
-            :disabled="submitting"
-            :loading="submitting"
+            :disabled="props.loading"
+            :loading="props.loading"
           >
-            {{ submitting ? `${$t('submitting')}...` : $t('submit') }}
+            {{ $t('submit') }}
           </nord-button>
         </nord-stack>
       </slot>

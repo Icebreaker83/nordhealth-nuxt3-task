@@ -1,9 +1,8 @@
 <script setup lang="ts">
 definePageMeta({
-  redirect: '/products',
+  title: 'home.self',
 });
 </script>
-
 <template>
   <ProductsList />
 </template>

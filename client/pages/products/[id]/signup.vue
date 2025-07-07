@@ -1,9 +1,8 @@
 <script setup lang="ts">
 definePageMeta({
-  redirect: '/products',
+  title: 'product.signup',
 });
 </script>
-
 <template>
-  <ProductsList />
+  <SignupForm />
 </template>

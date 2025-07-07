@@ -3,10 +3,12 @@ import '@nordhealth/components/lib/Input';
 import '@nordhealth/components/lib/Button';
 import '@nordhealth/components/lib/Tooltip';
 
-const model = defineModel<string>({ required: true });
+const model = defineModel<string>();
 
 interface PasswordInputProps {
   autocomplete?: 'new-password' | 'current-password';
+  error?: string;
+  disabled?: boolean;
 }
 const props = withDefaults(defineProps<PasswordInputProps>(), {
   autocomplete: 'current-password',
@@ -31,14 +33,18 @@ const iconName = computed(() => {
     :label="$t('password.self')"
     :type="inputType"
     :autocomplete="props.autocomplete"
+    :error="props.error"
+    :disabled="props.disabled"
     name="password"
     required
   >
     <nord-button
       slot="end"
+      type="button"
       aria-describedby="password-tooltip"
       square
       tabindex="-1"
+      :disabled="props.disabled"
       @click="toggleType"
     >
       <nord-icon :name="iconName" />
