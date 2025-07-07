@@ -2,6 +2,7 @@
 import '@nordhealth/components/lib/Card';
 import '@nordhealth/components/lib/Stack';
 import '@nordhealth/components/lib/Button';
+import '@nordhealth/components/lib/Divider';
 import type { Product } from './types';
 
 const props = defineProps<{
@@ -23,7 +24,7 @@ const onCancel = () => {
     <h2 slot="header">{{ props.item.name }}</h2>
 
     <nord-button slot="header-end" variant="primary" @click="onSignup">
-      {{ $t('product.signup') }}
+      {{ $t('product.signup.self') }}
     </nord-button>
     <nord-stack direction="horizontal">
       <nord-stack gap="l">
@@ -31,6 +32,8 @@ const onCancel = () => {
           {{ props.item.text }}
         </p>
         <template v-if="signingup">
+          <h3>{{ $t('product.signup.title') }}</h3>
+          <nord-divider />
           <SignupForm @cancel="onCancel" />
         </template>
       </nord-stack>

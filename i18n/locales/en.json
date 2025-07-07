@@ -20,7 +20,10 @@
     "email": "Invalid email"
   },
   "product": {
-    "signup": "Sign-up",
+    "signup": {
+      "self": "Sign-up",
+      "title": "Enter your credentials to signup"
+    },
     "subscribe": "I would like to receive occasional product updates and announcements"
   }
 }
