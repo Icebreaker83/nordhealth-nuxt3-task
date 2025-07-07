@@ -1,0 +1,13 @@
+{
+  "email": {
+    "short": "Email | Emails",
+    "long": "Email address | Email addresses"
+  },
+  "password": {
+    "self": "Password",
+    "showHide": "Show / hide password"
+  },
+  "submit": "Submit",
+  "submitting": "Submitting",
+  "cancel": "Cancel"
+}
