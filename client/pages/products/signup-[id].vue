@@ -18,7 +18,7 @@ const onSubmit = () => {
 </script>
 
 <template>
-  <h3>{{ $t('product.signup.title') }}</h3>
   <nord-divider />
+  <h3>{{ $t('product.signup.title') }}</h3>
   <SignupForm @cancel="onCancel" @submit="onSubmit" />
 </template>

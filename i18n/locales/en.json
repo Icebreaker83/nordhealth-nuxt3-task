@@ -25,7 +25,7 @@
   "product": {
     "signup": {
       "self": "Sign Up",
-      "title": "Enter your credentials to signup",
+      "title": "Enter your credentials to Sign Up",
       "success": "Thank you for signing up!"
     },
     "subscribe": "I would like to receive occasional product updates and announcements"
