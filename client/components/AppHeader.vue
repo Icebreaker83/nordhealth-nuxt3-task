@@ -7,7 +7,10 @@ const language = ref(locale);
 </script>
 <template>
   <nord-header>
-    <h1 class="n-typescale-l">{{ $t('app.title') }}</h1>
+    <NuxtLink to="/" class="app-title">
+      <h1 class="n-typescale-l">{{ $t('app.title') }}</h1>
+    </NuxtLink>
+
     <div slot="end">
       <nord-select
         v-model="language"
@@ -22,3 +25,8 @@ const language = ref(locale);
     </div>
   </nord-header>
 </template>
+<style scoped lang="scss">
+.app-title {
+  text-decoration: none;
+}
+</style>
