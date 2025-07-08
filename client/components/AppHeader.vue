@@ -13,7 +13,7 @@ const routeTitle = computed(() => {
 });
 </script>
 <template>
-  <nord-header slot="header">
+  <nord-header>
     <h1 class="n-typescale-l">{{ routeTitle }}</h1>
   </nord-header>
 </template>

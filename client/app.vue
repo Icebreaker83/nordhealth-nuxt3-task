@@ -2,8 +2,8 @@
 import '@nordhealth/components/lib/Layout';
 </script>
 <template>
-  <nord-layout>
-    <AppHeader />
+  <nord-layout sticky>
+    <AppHeader slot="header" />
     <NuxtPage />
   </nord-layout>
 </template>

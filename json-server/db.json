@@ -3,7 +3,70 @@
     {
       "id": 1,
       "name": "Super awesome product",
-      "text": "This is some super awesome product that you definetly want to sign up for! Sign-up now and get a one time, totaly free, T-Shirt",
+      "text": "This is some super awesome product that you definitely want to sign up for! Sign-up now and get a one-time, totally free, T-Shirt.",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 2,
+      "name": "Mega Productivity Booster",
+      "text": "Unlock your full potential with our Mega Productivity Booster. Sign up today and receive a free digital planner!",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 3,
+      "name": "EcoFriendly Bottle",
+      "text": "Stay hydrated and save the planet. Get your EcoFriendly Bottle with your first sign-up – totally free!",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 4,
+      "name": "Online Fitness Portal",
+      "text": "Join our Online Fitness Portal and access 100+ workout plans. Sign up now and enjoy a free week of premium content!",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 5,
+      "name": "Smart Budget App",
+      "text": "Take control of your finances with our Smart Budget App. First-time users get 1 month of premium free upon sign-up.",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 6,
+      "name": "Daily Language Trainer",
+      "text": "Learn a new language in just 10 minutes a day! Sign up now and receive a free phrasebook PDF.",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 7,
+      "name": "Custom Pet Portraits",
+      "text": "Immortalize your furry friend with a hand-drawn pet portrait. Sign up and get 10% off your first order!",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 8,
+      "name": "Sleep Sound Machine",
+      "text": "Struggling to sleep? Try our Sound Machine and drift off faster. Sign up now and get a free sample track.",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 9,
+      "name": "Mindfulness Journal",
+      "text": "Start your journey to clarity and calm with our Mindfulness Journal. Free trial version available at sign-up!",
+      "signedup": false,
+      "subscribed": false
+    },
+    {
+      "id": 10,
+      "name": "Virtual Cooking Classes",
+      "text": "Cook like a pro from your own kitchen! Sign up for our virtual classes and get your first recipe eBook free.",
       "signedup": false,
       "subscribed": false
     }
