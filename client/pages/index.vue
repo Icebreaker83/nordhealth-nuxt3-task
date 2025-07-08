@@ -5,5 +5,5 @@ definePageMeta({
 </script>
 
 <template>
-  <ProductsList />
+  <NuxtPage />
 </template>

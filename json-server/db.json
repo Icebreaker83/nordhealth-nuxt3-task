@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Super awesome product",
+      "text": "This is some super awesome product that you definetly want to sign up for! Sign-up now and get a one time, totaly free, T-Shirt",
+      "signedup": false,
+      "subscribed": false
+    }
+  ]
+}

@@ -22,7 +22,11 @@ export default defineNuxtConfig({
       { path: './features', pathPrefix: false },
     ],
   },
-
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:3001/api',
+    },
+  },
   app: {
     head: {
       title: 'Product Sign-up',
