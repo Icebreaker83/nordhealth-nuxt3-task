@@ -1,6 +1,25 @@
-# Nuxt Minimal Starter
+# Nordhealth Nuxt 3 Task
+
+This repository is for the purpose of the tehnical task for the Nordhealth.
+
+Solution can be viewed at [Render.com](https://nordhealth-nuxt3-task-client.onrender.com/products).
+NOTE: Spinning up of server on Render can take more than 50sec because I'm on free plan.
+
+Mock api server is located in [json-server folder](./json-server/), and can be executed from that folder.
+
+Solution is ment to demonstrate some concepts in Vue 3/Nuxt 3 development.  
+If you see that something is done in a more complex way, its probably ment to demonstrate some key concent, eg. products and nested dynamic routes.  
+There's still a lot of advanced concepts that are not present, because I have to make the decision to implement certain things in a timely manner.  
+For example, dynamic components could be implemented in Form component, so that we have a factory for forms and just define them via json, but it would take some time to get it done.  
+We can discuss those concepts in interview.
+
+## Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+## Dependencies
+
+- Node 20+
 
 ## Setup
 
@@ -36,6 +55,16 @@ yarn dev
 
 # bun
 bun run dev
+```
+
+## Json Server for mock api
+
+Go to `./json-server` folder
+
+```bash
+# npm
+npm run install
+npm run start
 ```
 
 ## Production
