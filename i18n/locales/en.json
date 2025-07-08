@@ -1,4 +1,7 @@
 {
+  "app": {
+    "title": "Nordhealth Nuxt 3 Task"
+  },
   "email": {
     "short": "Email | Emails",
     "long": "Email address | Email addresses"
@@ -21,8 +24,9 @@
   },
   "product": {
     "signup": {
-      "self": "Sign-up",
-      "title": "Enter your credentials to signup"
+      "self": "Sign Up",
+      "title": "Enter your credentials to signup",
+      "success": "Thank you for signing up!"
     },
     "subscribe": "I would like to receive occasional product updates and announcements"
   }

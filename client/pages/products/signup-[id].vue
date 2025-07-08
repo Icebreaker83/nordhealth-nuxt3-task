@@ -12,9 +12,8 @@ const onCancel = () => {
   router.push('/');
 };
 
-const onSubmit = (formData: any) => {
-  console.log('Form submitted for product:', productId, formData);
-  // router.push('/products');
+const onSubmit = () => {
+  navigateTo({ path: `/products/signedup-${productId}` });
 };
 </script>
 

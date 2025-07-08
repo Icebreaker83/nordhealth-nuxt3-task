@@ -4,6 +4,10 @@ import '@nordhealth/components/lib/Checkbox';
 
 const receiveUpdates = ref(false);
 
+const emit = defineEmits<{
+  submit: [];
+}>();
+
 const { validators, getValidationSchema } = useValidation();
 const { minLength } = validators;
 const validationSchema = getValidationSchema({
@@ -17,13 +21,14 @@ const { errors, handleSubmit } = useForm({
 const { value: email } = useField('email');
 const { value: password } = useField('password');
 
+// mock api request
 const loading = ref(false);
 const onSubmit = handleSubmit(async () => {
   loading.value = true;
   setTimeout(() => {
     loading.value = false;
+    emit('submit');
   }, 2000);
-  // navigateTo({ path: '/success' });
 });
 </script>
 

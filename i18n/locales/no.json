@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "Nordhealth Nuxt 3 Oppgave"
+  },
+  "email": {
+    "short": "E-post | E-poster",
+    "long": "E-postadresse | E-postadresser"
+  },
+  "password": {
+    "self": "Passord",
+    "showHide": "Vis / skjul passord"
+  },
+  "submit": "Send inn",
+  "submitting": "Sender inn",
+  "cancel": "Avbryt",
+  "home": {
+    "self": "Hjem"
+  },
+  "validators": {
+    "required": "Påkrevd",
+    "minLength": "Minimumslengde på {min} tegn",
+    "maxLength": "Maksimallengde på {min} tegn",
+    "email": "Ugyldig e-post"
+  },
+  "product": {
+    "signup": {
+      "self": "Registrer deg",
+      "title": "Skriv inn dine opplysninger for å registrere deg",
+      "success": "Takk for at du registrerte deg!"
+    },
+    "subscribe": "Jeg ønsker å motta sporadiske produktoppdateringer og kunngjøringer"
+  }
+}

@@ -9,32 +9,31 @@ const props = defineProps<{
   item: Product;
 }>();
 
-const router = useRouter();
 const route = useRoute();
+const childRoutes = [
+  `/products/signup-${props.item.id}`,
+  `/products/signedup-${props.item.id}`,
+];
+const signupPath = `/products/signup-${props.item.id}`;
 
-// Check if this product's signup form is currently active
 const isSignupActive = computed(() => {
-  return route.path === `/products/signup-${props.item.id}`;
+  return childRoutes.includes(route.path);
 });
-
-const onSignup = () => {
-  // Navigate to the signup child route
-  router.push(`/products/signup-${props.item.id}`);
-};
 </script>
 
 <template>
   <nord-card padding="l">
     <h2 slot="header">{{ props.item.name }}</h2>
 
-    <nord-button
+    <NuxtLink
       v-if="!isSignupActive"
       slot="header-end"
-      variant="primary"
-      @click="onSignup"
+      :to="{ path: signupPath }"
     >
-      {{ $t('product.signup.self') }}
-    </nord-button>
+      <nord-button variant="primary">
+        {{ $t('product.signup.self') }}
+      </nord-button>
+    </NuxtLink>
 
     <nord-stack direction="horizontal">
       <nord-stack gap="l">
