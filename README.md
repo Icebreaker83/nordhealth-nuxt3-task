@@ -2,7 +2,7 @@
 
 This repository is for the purpose of the tehnical task for the Nordhealth.
 
-Solution can be viewed at [Render.com](https://nordhealth-nuxt3-task-client.onrender.com/products).
+Solution can be viewed at [Render.com](https://nordhealth-nuxt3-task-client.onrender.com/products).  
 NOTE: Spinning up of server on Render can take more than 50sec because I'm on free plan.
 
 Mock api server is located in [json-server folder](./json-server/), and can be executed from that folder.
