@@ -47,7 +47,7 @@ export default defineNuxtConfig({
 
   vue: {
     compilerOptions: {
-      isCustomElement: (tag) => tag.includes('-'),
+      isCustomElement: (tag) => tag.includes('-') && tag !== 'i18n-t',
     },
   },
 });

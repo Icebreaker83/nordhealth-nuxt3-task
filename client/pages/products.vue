@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import '@nordhealth/components/lib/Stack';
+
+const listKey = ref(0);
+const onRefresh = () => {
+  listKey.value++;
+};
 </script>
 
 <template>
   <div class="product-list">
     <div class="card-wrapper">
       <nord-stack gap="l">
-        <Suspense>
-          <ProductsList />
+        <Suspense :key="listKey">
+          <ProductsList @refresh="onRefresh" />
           <template #fallback>
             <ProductSkeleton />
           </template>

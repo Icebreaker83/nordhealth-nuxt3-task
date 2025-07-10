@@ -1,4 +1,5 @@
 import type { NitroFetchOptions } from 'nitropack';
+import { useToastsStore } from '~/features/toast/store';
 
 type HttpMethod =
   | 'get'
@@ -20,6 +21,7 @@ export interface Endpoint {
 
 export const useApi = <T>() => {
   const config = useRuntimeConfig();
+  const { add } = useToastsStore();
   const loading = ref(false);
 
   const { apiBaseUrl: baseURL } = config.public;
@@ -44,6 +46,8 @@ export const useApi = <T>() => {
     } catch (error) {
       const apiError = error as Error;
       errorCallback?.(apiError);
+      const message = apiError.message ?? 'API Error';
+      add({ variant: 'danger', message });
       throw new Error(apiError.message ?? 'API Error');
     } finally {
       finallyCallback?.();

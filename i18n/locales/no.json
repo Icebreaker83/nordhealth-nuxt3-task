@@ -13,6 +13,7 @@
   "submit": "Send inn",
   "submitting": "Sender inn",
   "cancel": "Avbryt",
+  "tryAgain": "Prøv igjen",
   "home": {
     "self": "Hjem"
   },
@@ -29,5 +30,8 @@
       "success": "Takk for at du registrerte deg!"
     },
     "subscribe": "Jeg ønsker å motta sporadiske produktoppdateringer og kunngjøringer"
+  },
+  "api": {
+    "error": "API-tjenesten er midlertidig nede. Vennligst {tryAgain} senere"
   }
 }

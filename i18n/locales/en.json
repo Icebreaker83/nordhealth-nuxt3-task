@@ -13,6 +13,7 @@
   "submit": "Submit",
   "submitting": "Submitting",
   "cancel": "Cancel",
+  "tryAgain": "Try again",
   "home": {
     "self": "Home"
   },
@@ -29,5 +30,8 @@
       "success": "Thank you for signing up!"
     },
     "subscribe": "I would like to receive occasional product updates and announcements"
+  },
+  "api": {
+    "error": "Api service is temporarily down. Please {tryAgain} later"
   }
 }
