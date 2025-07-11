@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import '@nordhealth/components/lib/Divider';
+import SignupForm from '~/features/products/SignupForm.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -13,12 +14,26 @@ const onCancel = () => {
 };
 
 const onSubmit = () => {
-  navigateTo({ path: `/products/signedup-${productId}` });
+  navigateTo({ path: `signedup-${productId}` });
 };
+
+const formRef = ref<InstanceType<typeof SignupForm>>();
+onMounted(() => {
+  // temp fix for nuxt 3 route scroll behavior, which scrolls to top when routing to this nested route
+  nextTick(() => {
+    if (!formRef.value) return;
+    const { $el: formElement } = formRef.value;
+    setTimeout(() => {
+      window.scrollTo({
+        top: formElement.offsetTop,
+      });
+    }, 100);
+  });
+});
 </script>
 
 <template>
   <nord-divider />
   <h3>{{ $t('product.signup.title') }}</h3>
-  <SignupForm @cancel="onCancel" @submit="onSubmit" />
+  <SignupForm ref="formRef" @cancel="onCancel" @submit="onSubmit" />
 </template>
