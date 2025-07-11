@@ -59,8 +59,6 @@ const onNestedRouteMounted = () => {
         <p>
           {{ props.item.text }}
         </p>
-
-        <!-- This will render the signup form when the route is active for this specific product -->
         <template v-if="isSignupActive">
           <NuxtPage @vue:mounted="onNestedRouteMounted" />
         </template>
