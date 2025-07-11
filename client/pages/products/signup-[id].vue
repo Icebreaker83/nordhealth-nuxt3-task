@@ -20,13 +20,15 @@ const onSubmit = () => {
 const formRef = ref<InstanceType<typeof SignupForm>>();
 onMounted(() => {
   // temp fix for nuxt 3 route scroll behavior, which scrolls to top when routing to this nested route
-  if (!formRef.value) return;
-  const { $el: formElement } = formRef.value;
-  setTimeout(() => {
-    window.scrollTo({
-      top: formElement.offsetTop,
-    });
-  }, 0);
+  nextTick(() => {
+    if (!formRef.value) return;
+    const { $el: formElement } = formRef.value;
+    setTimeout(() => {
+      window.scrollTo({
+        top: formElement.offsetTop,
+      });
+    }, 0);
+  });
 });
 </script>
 
