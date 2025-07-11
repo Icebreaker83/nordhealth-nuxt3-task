@@ -3,24 +3,23 @@ import type { Product } from './types';
 
 export const useProductsStore = defineStore('products-store', () => {
   const products = ref<Product[]>([]);
-  const errored = ref(false);
+  const scrollY = ref(0);
 
   const loadProducts = () => {
     const { url, options } = endpoints.getProducts;
-    const { loading, execute } = useApi<Product[]>();
+    const { loading, execute, errored } = useApi<Product[]>();
 
     const getProducts = async () => {
-      try {
-        errored.value = false;
-        await execute(url, options, (response) => {
-          products.value = response;
-        });
-      } catch {
-        errored.value = true;
-      }
+      await execute(url, options, (response) => {
+        products.value = response;
+      });
     };
 
-    return { loading, getProducts };
+    return { loading, errored, getProducts };
   };
-  return { products, errored, loadProducts };
+
+  const setScrollY = (value: number) => {
+    scrollY.value = value;
+  };
+  return { products, scrollY, loadProducts, setScrollY };
 });

@@ -2,7 +2,6 @@
 import '@nordhealth/components/lib/Card';
 import '@nordhealth/components/lib/Stack';
 import '@nordhealth/components/lib/Button';
-
 import type { Product } from './types';
 
 const props = defineProps<{
@@ -19,6 +18,25 @@ const signupPath = `/products/signup-${props.item.id}`;
 const isSignupActive = computed(() => {
   return childRoutes.includes(route.path);
 });
+
+// temp solution for nuxt 3 scroll to top on nested route change
+// TODO: Research further how to retain scroll position.
+// Unsuccessfully tried with:
+// 1. scrollBehavior in RouterConfig in /app/router.options.ts
+// 2. scrollToTop: false in definePageMeta
+const scrollY = ref(0);
+const onSignupBtnClick = () => {
+  scrollY.value = window.scrollY;
+};
+const onNestedRouteMounted = () => {
+  nextTick(() => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: scrollY.value,
+      });
+    }, 0);
+  });
+};
 </script>
 
 <template>
@@ -29,6 +47,7 @@ const isSignupActive = computed(() => {
       v-if="!isSignupActive"
       slot="header-end"
       :to="{ path: signupPath }"
+      @click.stop="onSignupBtnClick"
     >
       <nord-button variant="primary">
         {{ $t('product.signup.self') }}
@@ -43,7 +62,7 @@ const isSignupActive = computed(() => {
 
         <!-- This will render the signup form when the route is active for this specific product -->
         <template v-if="isSignupActive">
-          <NuxtPage />
+          <NuxtPage @vue:mounted="onNestedRouteMounted" />
         </template>
       </nord-stack>
     </nord-stack>

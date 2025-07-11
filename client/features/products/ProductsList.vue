@@ -7,9 +7,9 @@ const emit = defineEmits<{
   refresh: [];
 }>();
 
-const { products, errored } = storeToRefs(useProductsStore());
+const { products } = storeToRefs(useProductsStore());
 const { loadProducts } = useProductsStore();
-const { getProducts } = loadProducts();
+const { getProducts, errored } = loadProducts();
 
 await getProducts();
 </script>
