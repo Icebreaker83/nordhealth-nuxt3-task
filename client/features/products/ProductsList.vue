@@ -15,7 +15,7 @@ await getProducts();
 </script>
 <template>
   <nord-banner v-if="errored" variant="danger">
-    <i18n-t keypath="api.error" tag="div">
+    <i18n-t keypath="api.error" tag="div" scope="global">
       <template #tryAgain>
         <nord-button
           type="submit"
