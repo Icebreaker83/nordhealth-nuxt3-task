@@ -9,10 +9,10 @@ const emit = defineEmits<{
 }>();
 
 const { validators, getValidationSchema } = useValidation();
-const { minLength } = validators;
+const { email: emailValidator, required, minLength } = validators;
 const validationSchema = getValidationSchema({
-  email: minLength(1),
-  password: minLength(1),
+  email: emailValidator,
+  password: required,
 });
 const { errors, handleSubmit } = useForm({
   validationSchema,
