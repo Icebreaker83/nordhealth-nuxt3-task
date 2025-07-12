@@ -12,7 +12,7 @@ Mock api server is located in [json-server folder](./json-server/), and can be e
 Solution is ment to demonstrate some concepts in Vue 3/Nuxt 3 development.  
 If you see that something is done in a more complex way, its probably ment to demonstrate some key concent, eg. products and nested dynamic routes.  
 There's still a lot of advanced concepts that are not present, because I have to make the decision to implement certain things in a timely manner, and most importantly, not to over engineer things, which is a problem a lot of devs suffer from :)   
-For example, dynamic components could be implemented in Form component, so that we have a factory for forms and just define them via json, but it would take some time to get it done.  
+For example, dynamic components could be implemented in Form component, so that we have a factory for forms, but it would take some time to get it done.  
 We can discuss those concepts in interview.
 
 ## Nuxt Minimal Starter
