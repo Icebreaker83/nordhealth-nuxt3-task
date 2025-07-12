@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import '@nordhealth/components/lib/ToastGroup';
 import '@nordhealth/components/lib/Toast';
-import { useToastsStore } from './store';
+import { useToastsStore } from '../store';
 
 const { toasts } = storeToRefs(useToastsStore());
 const { remove } = useToastsStore();

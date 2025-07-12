@@ -2,7 +2,7 @@
 import '@nordhealth/components/lib/Card';
 import '@nordhealth/components/lib/Stack';
 import '@nordhealth/components/lib/Button';
-import type { Product } from './types';
+import type { Product } from '../types';
 
 const props = defineProps<{
   item: Product;

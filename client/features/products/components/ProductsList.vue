@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import '@nordhealth/components/lib/Banner';
 import '@nordhealth/components/lib/Button';
-import { useProductsStore } from './store';
+import { useProductsStore } from '../store';
 
 const emit = defineEmits<{
   refresh: [];

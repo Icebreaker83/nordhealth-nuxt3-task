@@ -19,7 +19,11 @@ export default defineNuxtConfig({
   components: {
     dirs: [
       { path: './components', pathPrefix: false },
-      { path: './features', pathPrefix: false },
+      {
+        path: './features',
+        pathPrefix: false,
+        ignore: ['**/*.{ts,js}', '!**/*.vue'],
+      },
     ],
   },
   runtimeConfig: {
