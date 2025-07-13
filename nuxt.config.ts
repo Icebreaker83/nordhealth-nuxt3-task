@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@vee-validate/nuxt',
+    '@nuxt/test-utils/module',
   ],
   css: [
     '@nordhealth/css/lib/nord.min.css',

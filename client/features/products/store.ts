@@ -12,11 +12,11 @@ export const useProductsStore = defineStore('products-store', () => {
     const getProducts = async () => {
       try {
         errored.value = false;
-        await execute(url, options, (response) => {
-          products.value = response;
-        });
+        const response = await execute(url, options);
+        products.value = response;
       } catch {
         errored.value = true;
+        products.value = [];
       }
     };
 

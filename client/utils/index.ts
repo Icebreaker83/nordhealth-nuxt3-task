@@ -38,7 +38,11 @@ export const findFirstFocusableElement = (
 const isElementFocusable = (element: HTMLElement): boolean => {
   // Check if element is visible
   const style = window.getComputedStyle(element);
-  if (style.display === 'none' || style.visibility === 'hidden') {
+  if (
+    style.display === 'none' ||
+    style.visibility === 'hidden' ||
+    style.opacity === '0'
+  ) {
     return false;
   }
 
@@ -61,18 +65,25 @@ const isElementFocusable = (element: HTMLElement): boolean => {
   return true;
 };
 
-// Alternative approach: Focus specific Nord component types
 export const focusNordComponent = (element: HTMLElement): boolean => {
   // For Nord components, we might need to call their focus method
   if (element.tagName.startsWith('NORD-')) {
-    try {
-      // Most Nord components have a focus() method
-      (element as any).focus?.();
-      return true;
-    } catch (error) {
-      console.warn('Could not focus Nord component:', error);
-      return false;
+    // Check if the focus method exists before trying to call it
+    if (typeof (element as any).focus === 'function') {
+      try {
+        (element as any).focus();
+        return true;
+      } catch (error) {
+        console.warn('Could not focus Nord component:', error);
+        return false;
+      }
     }
+
+    console.warn(
+      'Nord component has no specific focus method:',
+      element.tagName
+    );
+    return false;
   }
 
   // For regular HTML elements

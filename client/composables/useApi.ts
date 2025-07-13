@@ -23,7 +23,6 @@ export const useApi = <T>() => {
   const config = useRuntimeConfig();
   const { add } = useToastsStore();
   const loading = ref(false);
-  const errored = ref(false);
 
   const { apiBaseUrl: baseURL } = config.public;
 
@@ -39,13 +38,11 @@ export const useApi = <T>() => {
     finallyCallback?: () => void
   ) => {
     loading.value = true;
-    errored.value = false;
     try {
       const response = await api<T>(url, options);
       successCallback?.(response);
       return response;
     } catch (error) {
-      errored.value = true;
       const apiError = error as Error;
       errorCallback?.(apiError);
       const message = apiError.message ?? 'API Error';
@@ -56,5 +53,5 @@ export const useApi = <T>() => {
       loading.value = false;
     }
   };
-  return { loading, execute, errored };
+  return { loading, execute };
 };

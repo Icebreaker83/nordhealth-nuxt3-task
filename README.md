@@ -5,15 +5,18 @@ This repository is for the purpose of the tehnical task for the Nordhealth.
 Solution can be viewed at [Render.com](https://nordhealth-nuxt3-task-client.onrender.com/products).
 NOTE: Spinning up of server on Render can take more than 50sec because I'm on free plan.  
 On initial page load, api service might error on the first try because it's idle, and it will also take 50+ sec to spin up.  
-By pressing the "Try again" button in error banner, products list component is rerendered, Suspense fallback is shown, and if api service is running, products are shown.  
+By pressing the "Try again" button in error banner, products list component is rerendered, Suspense fallback is shown, and if api service is running, products are shown.
 
 Mock api server is located in [json-server folder](./json-server/), and can be executed from that folder.
 
 Solution is ment to demonstrate some concepts in Vue 3/Nuxt 3 development.  
 If you see that something is done in a more complex way, its probably ment to demonstrate some key concent, eg. products and nested dynamic routes.  
-There's still a lot of advanced concepts that are not present, because I have to make the decision to implement certain things in a timely manner, and most importantly, not to over engineer things, which is a problem a lot of devs suffer from :)   
+There's still a lot of advanced concepts that are not present, because I have to make the decision to implement certain things in a timely manner, and most importantly, not to over engineer things, which is a problem a lot of devs suffer from :)  
 For example, dynamic components could be implemented in Form component, so that we have a factory for forms and just define them via json, but it would take some time to get it done.  
 We can discuss those concepts in interview.
+
+At the moment, unit tests are implemented as a [PoC](https://en.wikipedia.org/wiki/Proof_of_concept) and high test coverage is not achieved.  
+E2E tests can be implemented also with (Playwright/Cypress).
 
 ## Nuxt Minimal Starter
 
@@ -101,6 +104,28 @@ yarn preview
 
 # bun
 bun run preview
+```
+
+## Testing
+
+This project uses [Vitest](https://vitest.dev/) for testing. Available commands:
+
+```bash
+# Interactive watch mode
+npm test
+
+# Run tests once
+npm run test:run
+
+# Run with coverage
+npm run test:coverage
+
+# Test specific features
+npm run test:products
+npm run test:features
+
+# Watch mode (alternative)
+npm run test:watch
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
