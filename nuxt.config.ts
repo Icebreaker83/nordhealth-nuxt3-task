@@ -48,6 +48,9 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'no', name: 'Norsk', file: 'no.json' },
     ],
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 
   vue: {
