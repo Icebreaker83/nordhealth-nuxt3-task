@@ -1,6 +1,6 @@
 # Nordhealth Nuxt 3 Task
 
-This repository is for the purpose of the technical task, using [Nordhealth Web Components](https://nordhealth.design/web-components/)
+This repository is for the purpose of the technical task, using [Nordhealth Web Components](https://nordhealth.design/web-components/) and [hybrid structure](https://dev.to/michaldulik/vue-modular-architecture-1d4e) of Modular and Folder-By-Type architecture.
 
 Solution can be viewed at [Render.com](https://nordhealth-nuxt3-task-client.onrender.com/products).
 NOTE: Spinning up of server on Render can take more than 50sec because I'm on free plan.  
