@@ -1,13 +1,12 @@
 # Nordhealth Nuxt 3 Task
 
-This repository is for the purpose of the technical task for the Nordhealth.
+This repository is for the purpose of the technical task, using [Nordhealth Web Components](https://nordhealth.design/web-components/)
 
 Solution can be viewed at [Render.com](https://nordhealth-nuxt3-task-client.onrender.com/products).
 NOTE: Spinning up of server on Render can take more than 50sec because I'm on free plan.  
-On initial page load, api service might error on the first try because it's idle, and it will also take 50+ sec to spin up.  
-By pressing the "Try again" button in error banner, products list component is rerendered, Suspense fallback is shown, and if api service is running, products are shown.
 
 Mock api server is located in [json-server folder](./json-server/), and can be executed from that folder.
+Environment (.env) config is not set up, because it's not necessary.
 
 Solution is meant to demonstrate some concepts in Vue 3/Nuxt 3 development.  
 If you see that something is done in a more complex way, its probably meant to demonstrate some key concept, eg. products and nested dynamic routes.  
