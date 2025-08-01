@@ -12,8 +12,10 @@
   },
   "submit": "Send inn",
   "submitting": "Sender inn",
+  "success": "Suksess",
   "cancel": "Avbryt",
   "tryAgain": "Prøv igjen",
+  "unexpectedError": "Uventet feil",
   "home": {
     "self": "Hjem"
   },

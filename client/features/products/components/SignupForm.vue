@@ -9,7 +9,7 @@ const emit = defineEmits<{
 }>();
 
 const { validators, getValidationSchema } = useValidation();
-const { email: emailValidator, required, minLength } = validators;
+const { email: emailValidator, required } = validators;
 const validationSchema = getValidationSchema({
   email: emailValidator,
   password: required,
@@ -18,15 +18,17 @@ const { errors, handleSubmit } = useForm({
   validationSchema,
 });
 
-const { value: email } = useField('email');
-const { value: password } = useField('password');
+const { value: email } = useField<string>('email');
+const { value: password } = useField<string>('password');
 
 // mock api request
 const loading = ref(false);
+const { $showToast, $i18n } = useNuxtApp();
 const onSubmit = handleSubmit(async () => {
   loading.value = true;
   setTimeout(() => {
     loading.value = false;
+    $showToast({ variant: 'default', message: $i18n.t('success') });
     emit('submit');
   }, 2000);
 });

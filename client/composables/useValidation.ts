@@ -1,4 +1,5 @@
-import { z, type ZodRawShape } from 'zod';
+import { z } from 'zod';
+import type { ZodRawShape } from 'zod';
 
 export const useValidation = () => {
   const { t } = useI18n();

@@ -6,17 +6,13 @@ import '@nordhealth/components/lib/VisuallyHidden';
 
 <template>
   <nord-card padding="l" aria-busy="true">
-    <nord-skeleton
-      effect="sheen"
-      class="skeleton-header"
-      slot="header"
-    ></nord-skeleton>
+    <nord-skeleton effect="sheen" class="skeleton-header" slot="header" />
     <div class="skeleton-paragraph">
-      <nord-skeleton effect="sheen"></nord-skeleton>
-      <nord-skeleton effect="sheen"></nord-skeleton>
-      <nord-skeleton effect="sheen"></nord-skeleton>
-      <nord-skeleton effect="sheen"></nord-skeleton>
-      <nord-skeleton effect="sheen"></nord-skeleton>
+      <nord-skeleton effect="sheen" />
+      <nord-skeleton effect="sheen" />
+      <nord-skeleton effect="sheen" />
+      <nord-skeleton effect="sheen" />
+      <nord-skeleton effect="sheen" />
     </div>
     <nord-visually-hidden>Loading</nord-visually-hidden>
   </nord-card>

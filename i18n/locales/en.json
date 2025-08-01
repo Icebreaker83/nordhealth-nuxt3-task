@@ -12,8 +12,10 @@
   },
   "submit": "Submit",
   "submitting": "Submitting",
+  "success": "Success",
   "cancel": "Cancel",
   "tryAgain": "Try again",
+  "unexpectedError": "Unexpected error",
   "home": {
     "self": "Home"
   },

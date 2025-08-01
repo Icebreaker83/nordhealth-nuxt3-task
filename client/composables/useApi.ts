@@ -1,57 +1,44 @@
-import type { NitroFetchOptions } from 'nitropack';
-import { useToastsStore } from '~/features/toast/store';
-
-type HttpMethod =
-  | 'get'
-  | 'post'
-  | 'put'
-  | 'delete'
-  | 'patch'
-  | 'head'
-  | 'connect'
-  | 'options'
-  | 'trace';
-
-type Options = NitroFetchOptions<string, HttpMethod>;
+import type { NitroFetchOptions, NitroFetchRequest } from 'nitropack';
 
 export interface Endpoint {
   url: string;
-  options: Options;
+  options?: NitroFetchOptions<NitroFetchRequest>;
 }
 
-export const useApi = <T>() => {
-  const config = useRuntimeConfig();
-  const { add } = useToastsStore();
+export const useApi = <ResT, DataT = ResT>() => {
   const loading = ref(false);
-
-  const { apiBaseUrl: baseURL } = config.public;
-
-  const api = $fetch.create({
-    baseURL,
-  });
+  const { $api } = useNuxtApp();
 
   const execute = async (
     url: string,
-    options: Options = {},
-    successCallback?: (response: T) => void,
-    errorCallback?: (error: Error) => void,
-    finallyCallback?: () => void
-  ) => {
+    options: NitroFetchOptions<NitroFetchRequest> = {},
+    config?: {
+      transform?: (data: ResT) => DataT;
+      successCallback?: (response: DataT) => void;
+      errorCallback?: (error: Error) => void;
+      finallyCallback?: () => void;
+    }
+  ): Promise<DataT> => {
     loading.value = true;
+
     try {
-      const response = await api<T>(url, options);
-      successCallback?.(response);
-      return response;
+      const response = await $api<ResT>(url, options);
+
+      // Apply transformation if provided, otherwise cast to DataT
+      const transformedData = config?.transform
+        ? config.transform(response)
+        : (response as unknown as DataT);
+
+      config?.successCallback?.(transformedData);
+      return transformedData;
     } catch (error) {
-      const apiError = error as Error;
-      errorCallback?.(apiError);
-      const message = apiError.message ?? 'API Error';
-      add({ variant: 'danger', message });
-      throw new Error(apiError.message ?? 'API Error');
+      config?.errorCallback?.(error as Error);
+      throw error;
     } finally {
-      finallyCallback?.();
+      config?.finallyCallback?.();
       loading.value = false;
     }
   };
+
   return { loading, execute };
 };
