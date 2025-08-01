@@ -12,7 +12,6 @@ Solution is meant to demonstrate some concepts in Vue 3/Nuxt 3 development.
 If you see that something is done in a more complex way, its probably meant to demonstrate some key concept, eg. products and nested dynamic routes.  
 There's still a lot of advanced concepts that are not present, because I have to make the decision to implement certain things in a timely manner, and most importantly, not to over engineer things, which is a problem a lot of devs suffer from :)   
 For example, dynamic components could be implemented in Form component, so that we have a factory for forms, but it would take some time to get it done.  
-We can discuss those concepts in interview.
 
 At the moment, unit tests are implemented as a [PoC](https://en.wikipedia.org/wiki/Proof_of_concept) and high test coverage is not achieved.  
 E2E tests can be implemented also with (Playwright/Cypress).
